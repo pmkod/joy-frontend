@@ -1,12 +1,13 @@
-import React, { ButtonHTMLAttributes } from "react";
+import React, { InputHTMLAttributes } from "react";
 import { inputLabelStyle, inputStyle } from "./Input.style";
 
-interface InputProps extends ButtonHTMLAttributes<HTMLInputElement> {
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
   label?: string;
   rounded?: "full";
   variant?: "fill" | "outline" | "plain";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
-  fullWidth?: boolean;
+  hasMarginBottom?: boolean;
+
 }
 
 const Input = ({
@@ -14,17 +15,18 @@ const Input = ({
   label,
   variant,
   size,
-  fullWidth,
+  hasMarginBottom,
   ...rest
 }: InputProps) => {
   return (
     <div>
-      {label && <div className={inputLabelStyle({size})}>{label}</div>}
+      {label && <div className={inputLabelStyle({ size })}>{label}</div>}
       <div>
         <input
           {...rest}
+          autoComplete="off"
           type="text"
-          className={inputStyle({ rounded, variant, size, fullWidth })}
+          className={inputStyle({ rounded, variant, size, hasMarginBottom })}
         />
       </div>
     </div>

@@ -15,11 +15,8 @@ export const inputLabelStyle = cva("w-full mb-1", {
   },
 });
 
-export const inputStyle = cva("border px-3 transition-colors", {
+export const inputStyle = cva("w-full border px-3 transition-colors", {
   variants: {
-    fullWidth: {
-      true: "w-full",
-    },
     size: {
       xs: "text-xs",
       sm: "text-sm",
@@ -36,11 +33,14 @@ export const inputStyle = cva("border px-3 transition-colors", {
       full: "rounded-full",
       base: "rounded",
     },
+    hasMarginBottom: {
+      true: "mb-5"
+    }
   },
   defaultVariants: {
     rounded: "base",
     variant: "outline",
     size: "md",
-    fullWidth: false,
+    hasMarginBottom: true
   },
 });

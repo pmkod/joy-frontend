@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const buttonStyle = cva(
-  "relative self-start flex justify-center items-center rounded-full transition-colors font-medium border",
+  "relative self-start flex justify-center items-center transition-colors font-medium border",
   {
     variants: {
       rounded: {
@@ -20,9 +20,9 @@ export const buttonStyle = cva(
       size: {
         xs: "px-2 py-0.5 text-xs",
         sm: "px-3 py-1 text-sm",
-        md: "px-5 py-2",
-        lg: "px-6 py-3 text-lg",
-        xl: "px-7 py-4 text-xl",
+        md: "px-5 py-2 text-sm",
+        lg: "px-7 py-3 text-lg",
+        xl: "px-9 py-4 text-xl",
       },
       fullWidth: {
         true: "w-full",

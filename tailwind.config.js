@@ -9,9 +9,6 @@ module.exports = {
       xl: { max: "1536px" },
     },
     extend: {
-      fontFamily: {
-        lexend: ["Lexend"],
-      },
     },
   },
   plugins: [],
