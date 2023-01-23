@@ -33,7 +33,7 @@ const BaseLayout = ({ children }: BaseLayoutProps) => {
                 className="flex items-center justify-between w-full px-10 sm:px-3 py-3 bg-white"
             >
                 <div className="w-72 md:w-32">
-                    <Link href="/" className="text-3xl sm:text-2xl font-bold text-black">Joy</Link>
+                    <Link href="/" className="text-3xl sm:text-2xl font-bold text-black">Reborn</Link>
                 </div>
 
                 <div

@@ -12,7 +12,7 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
         <div>
             <div className="sm:mb-4">
                 <div className="pl-10 py-3 sm:pl-3">
-                    <Link href="/" className="text-3xl sm:text-2xl font-bold text-black">Joy</Link>
+                    <Link href="/" className="text-3xl sm:text-2xl font-bold text-black">Reborn</Link>
                 </div>
             </div>
 

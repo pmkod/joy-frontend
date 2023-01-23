@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from "react";
-import { buttonStyle } from "./Button.style"
+import { buttonIconStyle, buttonStyle } from "./Button.style"
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -7,7 +7,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "fill" | "outline" | "plain";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   fullWidth?: boolean;
-  colorScheme?: "primary" | "danger";
+  colorScheme?: "primary" | "danger" | "dark";
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }
 
 
@@ -18,6 +20,7 @@ const Button = ({
   children,
   size,
   fullWidth,
+  leftIcon, rightIcon,
   ...rest
 }: ButtonProps) => {
   return (
@@ -31,7 +34,21 @@ const Button = ({
         fullWidth,
       })}
     >
+      {leftIcon &&
+        <div className={buttonIconStyle({ size, position: "left" })}>
+          {leftIcon}
+        </div>
+      }
       {children}
+
+      {
+        rightIcon &&
+
+
+        <div className={buttonIconStyle({ size, position: "right" })}>
+          {rightIcon}
+        </div>
+      }
     </button>
   );
 };

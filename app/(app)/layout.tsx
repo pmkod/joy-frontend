@@ -1,8 +1,36 @@
+"use client"
 import Link from 'next/link';
+import { usePathname } from "next/navigation"
 import React from 'react'
-import { HiOutlineHome } from "react-icons/hi"
-import { RiChatSmile3Line, RiCompass3Line, RiNotification3Line, RiSettings3Line } from 'react-icons/ri';
+import { HiHome, HiOutlineHome } from "react-icons/hi"
+import { RiChatSmile3Fill, RiChatSmile3Line, RiCompass3Fill, RiCompass3Line, RiNotification3Fill, RiNotification3Line, RiSettings3Fill, RiSettings3Line } from 'react-icons/ri';
 
+
+
+interface SidebarLinkProps {
+    pathname: string
+    filledIcon: React.ReactNode
+    outlinedIcon: React.ReactNode
+    label: string;
+}
+
+const SidebarLink = ({ pathname, filledIcon, outlinedIcon, label }: SidebarLinkProps) => {
+    const currentPathname = usePathname();
+    const isActive = currentPathname?.startsWith(pathname);
+    return (
+        <Link
+            href={pathname}
+            className={`flex items-center px-3 rounded-lg py-2 transition-colors font-medium ${isActive ? "text-blue-600 bg-gray-100" : "text-gray-500 hover:bg-gray-100"}`}
+        >
+            <div className="w-6 h-6 mr-4">
+                {isActive ? filledIcon : outlinedIcon}
+            </div>
+            <span className="">
+                {label}
+            </span>
+        </Link>
+    )
+}
 
 
 
@@ -12,42 +40,29 @@ interface LayoutWithSidebarProps {
 
 const LayoutWithSidebar = ({ children }: LayoutWithSidebarProps) => {
     const tabs = [
-        { name: "Home", pathname: "/home", icon: <HiOutlineHome /> },
-        { name: "Explore", pathname: "/explore", icon: <RiCompass3Line /> },
+        { label: "Home", pathname: "/home", outlineIcon: <HiOutlineHome />, fillIcon: <HiHome /> },
+        { label: "Explore", pathname: "/explore", outlineIcon: <RiCompass3Line />, fillIcon: <RiCompass3Fill /> },
         {
-            name: "Discussions",
+            label: "Discussions",
             pathname: "/discussions",
-            icon: <RiChatSmile3Line />,
+            outlineIcon: <RiChatSmile3Line />, fillIcon: <RiChatSmile3Fill />,
         },
-        { name: "Notifications", pathname: "/notfications", icon: <RiNotification3Line /> },
-        { name: "Settings", pathname: "/settings", icon: <RiSettings3Line /> },
+        { label: "Notifications", pathname: "/notifications", outlineIcon: <RiNotification3Line />, fillIcon: <RiNotification3Fill /> },
+        { label: "Settings", pathname: "/settings", outlineIcon: <RiSettings3Line />, fillIcon: <RiSettings3Fill /> },
     ];
 
     return (
 
         <div className="flex relative">
-            <div className="flex flex-col w-64 h-screen sticky top-0 left-0">
+            <div className="flex flex-col w-64 h-screen sticky top-0 left-0 border-r border-gray-200">
                 <div className="mb-5">
                     <div className="pl-8 py-3">
-                        <Link href="/home" className="text-2xl font-bold">Joy</Link>
+                        <Link href="/home" className="text-2xl font-bold">Reborn</Link>
                     </div>
                 </div>
                 <div className="px-5 flex-1">
                     {tabs.map((item, index) => (
-
-
-                        <Link
-                            key={index}
-                            href={item.pathname}
-                            className="flex items-center px-3 rounded-md py-2 transition-colors text-gray-800 hover:bg-gray-100"
-                        >
-                            <div className="w-6 h-6 mr-5">
-                                {item.icon}
-                            </div>
-                            <span className="">
-                                {item.name}
-                            </span>
-                        </Link>
+                        <SidebarLink label={item.label} pathname={item.pathname} filledIcon={item.fillIcon} outlinedIcon={item.outlineIcon} />
                     ))}
                 </div>
                 <div className="px-5 pb-5">

@@ -16,6 +16,7 @@ export const buttonStyle = cva(
       colorScheme: {
         primary: "",
         danger: "",
+        dark: ""
       },
       size: {
         xs: "px-2 py-0.5 text-xs",
@@ -37,23 +38,28 @@ export const buttonStyle = cva(
           "bg-yellow-300 border-yellow-300 hover:bg-yellow-400 hover:border-yellow-400 text-gray-800",
       },
       {
+        variant: "fill",
+        colorScheme: "dark",
+        className:
+          "bg-gray-800 border-gray-800 hover:bg-gray-900 hover:border-gray-900 text-white",
+      },
+      {
+        variant: "fill",
+        colorScheme: "danger",
+        className:
+          "bg-red-500 border-red-600 hover:bg-red-600 hover:border-red-600 text-white",
+      },
+      {
         variant: "outline",
         colorScheme: "primary",
         className:
           "text-yellow-500 hover:bg-gray-100 bg-transparent border-gray-300",
       },
       {
-        variant: "plain",
-        colorScheme: "primary",
+        variant: "outline",
+        colorScheme: "dark",
         className:
-          "text-yellow-500 hover:bg-gray-100 bg-transparent border-transparent",
-      },
-      // Danger
-      {
-        variant: "fill",
-        colorScheme: "danger",
-        className:
-          "bg-red-500 border-red-600 hover:bg-red-600 hover:border-red-600 text-white",
+          "text-gray-800 hover:bg-gray-100 bg-transparent border-gray-300",
       },
       {
         variant: "outline",
@@ -63,9 +69,21 @@ export const buttonStyle = cva(
       },
       {
         variant: "plain",
+        colorScheme: "primary",
+        className:
+          "text-yellow-500 hover:bg-gray-200 bg-transparent border-transparent",
+      },
+      {
+        variant: "plain",
+        colorScheme: "dark",
+        className:
+          "text-gray-800 hover:bg-gray-200 bg-transparent border-transparent",
+      },
+      {
+        variant: "plain",
         colorScheme: "danger",
         className:
-          "text-red-500 hover:bg-gray-100 bg-transparent border-transparent",
+          "text-red-500 hover:bg-gray-200 bg-transparent border-transparent",
       },
     ],
     defaultVariants: {
@@ -76,4 +94,28 @@ export const buttonStyle = cva(
       fullWidth: false,
     },
   }
+);
+
+
+export const buttonIconStyle = cva("", {
+  variants: {
+    size: {
+
+
+      xs: "w-2 h-2",
+      sm: "w-3 h-3",
+      md: "w-5 h-5",
+      lg: "w-6 h-6",
+      xl: "w-7 h-7",
+    },
+    position: {
+      left: "mr-3",
+      right: "ml-3"
+    },
+
+  },
+  defaultVariants: {
+    size: "md"
+  }
+}
 );

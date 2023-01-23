@@ -2,13 +2,13 @@ import React from 'react'
 
 const Post = () => {
     return (
-        <div className="w-[500px] mb-10">
-            <div className="flex items-center">
-                <div className="mr-2.5 rounded-full w-11 h-11 bg-gray-200" />
+        <div className="mb-10 p-6 rounded-3xl border bg-white border-gray-200">
+            <div className="flex items-start">
+                <div className="mr-2.5 rounded-full w-12 h-12 bg-gray-200" />
 
                 <div>
-                    <div className="text-sm">Pierre Marie</div>
-                    <div className="text-xs text-gray-400">pierma</div>
+                    <div className="font-medium">Pierre Marie</div>
+                    <div className="text-sm text-gray-400">pierma</div>
                 </div>
             </div>
 
@@ -21,7 +21,7 @@ const Post = () => {
             <div className="mt-3">
                 <img
                     src="https://images.pexels.com/photos/14284974/pexels-photo-14284974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    className="w-[500px] h-[500px] object-cover"
+                    className="w-[500px] h-[400px] object-cover rounded-2xl"
                     alt=""
                 />
             </div>

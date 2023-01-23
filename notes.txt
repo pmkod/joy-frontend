@@ -1,0 +1,4 @@
+Dans le compsant messages, pour différencier les messages envoyés par l'utlisateur connecté et ses interlocuteurs
+tu as fixé l'id de l'utilisateur connecté (currentUser) à 1 tu dois mettre la valeur dynamique contenu dans le store
+
+Crée les IconButton dans le design system
