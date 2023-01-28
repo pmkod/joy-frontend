@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-export const inputLabelStyle = cva("w-full mb-1", {
+export const inputLabelStyle = cva("mb-1", {
   variants: {
     size: {
       xs: "text-xs",
@@ -31,14 +31,14 @@ export const inputStyle = cva("w-full border px-3 transition-colors", {
     },
     rounded: {
       full: "rounded-full",
-      base: "rounded",
+      md: "rounded",
     },
     hasMarginBottom: {
       true: "mb-5"
     }
   },
   defaultVariants: {
-    rounded: "base",
+    rounded: "md",
     variant: "outline",
     size: "md",
     hasMarginBottom: true

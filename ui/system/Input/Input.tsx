@@ -3,7 +3,7 @@ import { inputLabelStyle, inputStyle } from "./Input.style";
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
   label?: string;
-  rounded?: "full";
+  rounded?: "full" | "md";
   variant?: "fill" | "outline" | "plain";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   hasMarginBottom?: boolean;
@@ -25,7 +25,6 @@ const Input = ({
         <input
           {...rest}
           autoComplete="off"
-          type="text"
           className={inputStyle({ rounded, variant, size, hasMarginBottom })}
         />
       </div>

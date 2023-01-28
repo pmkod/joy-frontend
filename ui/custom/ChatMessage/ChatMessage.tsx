@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
 import Link from "next/link";
 
-type MessageProps = {
+export type ChatMessageProps = {
   text: string;
-  isGroupMessage: boolean;
+  isGroupChatMessage: boolean;
   sender: {
     id: number;
     fullName: string;
@@ -20,23 +20,23 @@ type MessageProps = {
   };
 };
 
-const Message = ({
+const ChatMessage = ({
   text,
   sender,
-  isGroupMessage,
+  isGroupChatMessage,
   createdAt,
   parent,
-}: MessageProps) => {
-  const isCurrentUserMessage = sender.id === 1;
+}: ChatMessageProps) => {
+  const isCurrentUserChatMessage = sender.id === 1;
   return (
     <div
       className={`flex items-end rounded-xl px-3 py-2 mb-1 w-max max-w-sm lg:max-w-xs sm:max-w-[50vw] ${
-        isCurrentUserMessage ? "bg-primary ml-auto" : "bg-two"
+        isCurrentUserChatMessage ? "bg-blue-500 ml-auto" : "bg-gray-200"
       }`}
     >
       <div>
-        {isGroupMessage && !isCurrentUserMessage && (
-          <div className="font-medium text-xs text-primary mb-1">
+        {isGroupChatMessage && !isCurrentUserChatMessage && (
+          <div className="font-medium text-xs text-blue-500 mb-1">
             <Link
               href={`/profile/${sender.userName}`}
               className="hover:underline"
@@ -46,16 +46,16 @@ const Message = ({
           </div>
         )}
         {parent && (
-          <div className="bg-gray-200 border-b mb-0.5 border-primary px-2 pt-0.5 rounded-lg w-full">
+          <div className="bg-gray-200 border-b mb-0.5 border-blue-500 px-2 pt-0.5 rounded-lg w-full">
             <Link
               href={`/profile/${parent.sender.userName}`}
-              className="font-medium text-xs text-primary mb-1 hover:underline"
+              className="font-medium text-xs text-blue-500 mb-1 hover:underline"
             >
               {parent.sender.fullName}
             </Link>
             <p
               className={`font-normal text-sm break-words ${
-                isCurrentUserMessage ? "text-one" : "text-six"
+                isCurrentUserChatMessage ? "text-white" : "text-gray-600"
               } ${parent.text.length < 40 && "mb-4"}`}
             >
               {parent.text}
@@ -64,7 +64,7 @@ const Message = ({
         )}
         <p
           className={`font-normal text-sm break-words ${
-            isCurrentUserMessage ? "text-one" : "text-ten"
+            isCurrentUserChatMessage ? "text-white" : "text-gray-900"
           } ${text.length < 40 && "mb-4"}`}
         >
           {text}
@@ -74,7 +74,7 @@ const Message = ({
       <div className="">
         <div
           className={`text-xs ${
-            isCurrentUserMessage ? "text-two" : "text-eight"
+            isCurrentUserChatMessage ? "text-gray-200" : "text-gray-800"
           } ${text.length < 40 ? "ml-0" : "ml-0.5"}`}
         >
           {dayjs(createdAt).format("HH:mm")}
@@ -84,4 +84,4 @@ const Message = ({
   );
 };
 
-export default Message;
+export default ChatMessage;

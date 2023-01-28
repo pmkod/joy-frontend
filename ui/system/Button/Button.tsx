@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
 import { buttonIconStyle, buttonStyle } from "./Button.style"
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit< ButtonHTMLAttributes<HTMLButtonElement>, "className"> {
   children: React.ReactNode;
   rounded?: "full" | "md";
   variant?: "fill" | "outline" | "plain";
