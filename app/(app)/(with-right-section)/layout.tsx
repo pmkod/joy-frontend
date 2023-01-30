@@ -4,7 +4,7 @@ import React, { PropsWithChildren } from "react";
 
 const Layout = ({ children }: PropsWithChildren) => {
     return (
-        <div className="flex">
+        <div className="flex min-h-screen">
             <div className="flex-1">{children}</div>
 
             <div className="w-96 pr-4 relative">

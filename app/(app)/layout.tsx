@@ -12,6 +12,9 @@ import {
     RiNotification3Line,
     RiSettings3Fill,
     RiSettings3Line,
+    RiSpeaker3Line,
+    RiUser3Fill,
+    RiUser3Line,
 } from "react-icons/ri";
 
 interface SidebarLinkProps {
@@ -77,6 +80,12 @@ const LayoutWithSidebar = ({ children }: LayoutWithSidebarProps) => {
             fillIcon: <RiNotification3Fill />,
         },
         {
+            label: "Profile",
+            pathname: "/accounts/pierma",
+            outlineIcon: <RiUser3Line />,
+            fillIcon: <RiUser3Fill />,
+        },
+        {
             label: "Settings",
             pathname: "/settings",
             outlineIcon: <RiSettings3Line />,
@@ -86,7 +95,7 @@ const LayoutWithSidebar = ({ children }: LayoutWithSidebarProps) => {
 
     return (
         <div className="flex relative">
-            <div className="flex flex-col w-64 h-screen sticky top-0 left-0 border-r border-slate-300">
+            <div className="flex flex-col w-64 h-screen sticky top-0 left-0">
                 <div className="mb-5">
                     <div className="pl-8 py-3">
                         <Link href="/home" className="text-2xl font-bold">
@@ -119,7 +128,7 @@ const LayoutWithSidebar = ({ children }: LayoutWithSidebarProps) => {
                 </div>
             </div>
 
-            <div className="flex-1">{children}</div>
+            <div className="flex-1 relative">{children}</div>
         </div>
     );
 };
