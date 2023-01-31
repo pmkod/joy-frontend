@@ -1,6 +1,8 @@
+"use client";
 import Button from "@/ui/system/Button/Button";
 import IconButton from "@/ui/system/IconButton/IconButton";
-import React from "react";
+import Tabs from "@/ui/system/Tabs/Tabs";
+import React, { PropsWithChildren } from "react";
 import {
     RiEdit2Fill,
     RiEdit2Line,
@@ -25,17 +27,77 @@ const AccountStatItem = ({ label, value }: AccountStatItemProps) => {
     );
 };
 
+const posts = [
+    {
+        medias: [
+            {
+                src: "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
+            },
+        ],
+    },
+    {
+        medias: [
+            {
+                src: "https://images.unsplash.com/photo-1615572359976-1fe39507ed7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            },
+        ],
+    },
+    {
+        medias: [
+            {
+                src: "https://images.unsplash.com/photo-1616268164880-673b3ba611bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            },
+        ],
+    },
+    {
+        medias: [
+            {
+                src: "https://images.unsplash.com/photo-1614204424926-196a80bf0be8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            },
+        ],
+    },
+    {
+        medias: [
+            {
+                src: "https://images.unsplash.com/photo-1539701938214-0d9736e1c16b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80",
+            },
+        ],
+    },
+];
+
+const likes = [
+    {
+        medias: [
+            {
+                src: "https://images.unsplash.com/photo-1539701938214-0d9736e1c16b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80",
+            },
+        ],
+    },
+    {
+        medias: [
+            {
+                src: "https://images.unsplash.com/photo-1615572359976-1fe39507ed7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            },
+        ],
+    },
+    {
+        medias: [
+            {
+                src: "https://images.unsplash.com/photo-1616268164880-673b3ba611bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            },
+        ],
+    },
+];
+
+const ImagesGaleryWrapper = ({ children }: PropsWithChildren) => {
+    return (
+        <div className="grid gap-x-2 gap-y-2 grid-cols-4 sm:grid-cols-3">
+            {children}
+        </div>
+    );
+};
+
 const AccountPage = () => {
-    const tabs = [
-        {
-            icon: "",
-            name: "Posts",
-        },
-        {
-            icon: "",
-            name: "Posts",
-        },
-    ];
     return (
         <div className="px-20 pt-5">
             <div className="flex">
@@ -99,15 +161,56 @@ const AccountPage = () => {
                     kodossoukouassi.vercel.app
                 </div>
             </div>
+            <div className="mt-4 mb-10">
+                <Tabs>
+                    <Tabs.List>
+                        <Tabs.Tab>Posts</Tabs.Tab>
 
-            <div>
-                <div>
-                    {tabs.map(() => (
-                        <div></div>
-                    ))}
-                </div>
+                        <Tabs.Tab>Enregistrements</Tabs.Tab>
 
-                <div>a</div>
+                        <Tabs.Tab>Likes</Tabs.Tab>
+                    </Tabs.List>
+
+                    <Tabs.Body>
+                        <Tabs.Panel>
+                            <ImagesGaleryWrapper>
+                                {posts.map(({ medias }, index) => (
+                                    <div
+                                        className="relative aspect-square cursor-pointer group"
+                                        key={index}
+                                    >
+                                        <div className="w-full h-full absolute group-hover:bg-gray-900 group-hover:bg-opacity-50 transition-colors"></div>
+                                        <img
+                                            src={medias[0].src}
+                                            alt=""
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                ))}
+                            </ImagesGaleryWrapper>
+                        </Tabs.Panel>
+                        <Tabs.Panel>
+                            <div>b</div>
+                        </Tabs.Panel>
+                        <Tabs.Panel>
+                            <ImagesGaleryWrapper>
+                                {likes.map(({ medias }, index) => (
+                                    <div
+                                        className="relative aspect-square cursor-pointer group"
+                                        key={index}
+                                    >
+                                        <div className="w-full h-full absolute group-hover:bg-gray-900 group-hover:bg-opacity-50 transition-colors"></div>
+                                        <img
+                                            src={medias[0].src}
+                                            alt=""
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                ))}
+                            </ImagesGaleryWrapper>
+                        </Tabs.Panel>
+                    </Tabs.Body>
+                </Tabs>
             </div>
         </div>
     );

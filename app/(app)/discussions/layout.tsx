@@ -41,8 +41,8 @@ const DiscussionsLayout = ({ children }: DiscussionsLayoutProps) => {
                 </div>
               </div> */}
                     {/* ))} */}
-                    {discussions.map(() => (
-                        <Link href={`/discussions/1000000`}>
+                    {discussions.map((a, index) => (
+                        <Link href={`/discussions/1000000`} key={index}>
                             <div
                                 className={`px-4 py-3 ${
                                     false ? "bg-gray-100" : "hover:bg-gray-200"

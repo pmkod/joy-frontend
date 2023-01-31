@@ -106,6 +106,7 @@ const LayoutWithSidebar = ({ children }: LayoutWithSidebarProps) => {
                 <div className="px-5 flex-1">
                     {tabs.map((item, index) => (
                         <SidebarLink
+                            key={index}
                             label={item.label}
                             pathname={item.pathname}
                             filledIcon={item.fillIcon}
