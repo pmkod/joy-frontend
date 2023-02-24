@@ -1,5 +1,5 @@
 import Nope from "nope-validator";
-import { passwordSchema } from "./shared_schemas";
+import { passwordSchema } from "./sharedSchemas";
 
 export type PasswordResetNewPasswordFields = {
     newPassword: string;

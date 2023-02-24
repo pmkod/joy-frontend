@@ -1,5 +1,5 @@
 import Nope from "nope-validator";
-import { emailSchema, passwordSchema } from "./shared_schemas";
+import { emailSchema, passwordSchema } from "./sharedSchemas";
 
 export type LoginFormFields = {
     email: string;

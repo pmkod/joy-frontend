@@ -4,7 +4,7 @@ import {
     fullNameSchema,
     passwordSchema,
     userNameSchema,
-} from "./shared_schemas";
+} from "./sharedSchemas";
 
 export type SignupFormFields = {
     userName: string;
