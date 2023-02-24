@@ -64,7 +64,7 @@ const TabsTab = ({
     return (
         <div
             onClick={changeSelectedIndex}
-            className={`h-10 cursor-pointer border-b-2 flex items-center justify-center gap-x-3 min-w-[120px] px-6 transition-colors ${
+            className={`h-10 cursor-pointer border-b-2 flex items-center justify-center gap-x-3 min-w-[120px] sm:min-w-max px-6 transition-colors ${
                 selectedTabIndex === tabIndex
                     ? "border-b-slate-800 text-gray-800"
                     : "border-b-transparent text-slate-400 hover:border-b-slate-400"

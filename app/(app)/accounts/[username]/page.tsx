@@ -18,11 +18,13 @@ type AccountStatItemProps = {
 
 const AccountStatItem = ({ label, value }: AccountStatItemProps) => {
     return (
-        <div className="flex items-center mr-5">
-            <div className="text-gray-900 text-lg font-semibold mr-1.5">
+        <div className="flex items-center mr-5 [&:nth-child(3)]:mr-0">
+            <div className="text-gray-900 text-lg sm:text-base font-semibold mr-1.5">
                 {value}
             </div>
-            <div className="text-gray-500 text-sm font-light">{label}</div>
+            <div className="text-gray-500 text-sm sm:text-xs font-light">
+                {label}
+            </div>
         </div>
     );
 };
@@ -123,7 +125,7 @@ const saves = [
 
 const ImagesGaleryWrapper = ({ children }: PropsWithChildren) => {
     return (
-        <div className="grid gap-x-2 gap-y-2 grid-cols-4 sm:grid-cols-3">
+        <div className="grid gap-x-2 gap-y-2 sm:gap-1 grid-cols-4 sm:grid-cols-3">
             {children}
         </div>
     );
@@ -131,69 +133,74 @@ const ImagesGaleryWrapper = ({ children }: PropsWithChildren) => {
 
 const AccountPage = () => {
     return (
-        <div className="px-20 pt-5">
-            <div className="flex">
-                <div className="mr-8">
-                    <img
-                        src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                        alt=""
-                        className="w-32 h-32 rounded-full bg-gray-100 object-cover"
-                    />
-                </div>
-
+        <div className="pt-5 sm:pt-8">
+            <div className="px-20 sm:px-4">
                 <div className="flex">
+                    <div className="mr-8 sm:mr-4">
+                        <img
+                            src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                            alt=""
+                            className="w-32 h-32 sm:w-20 sm:h-20 rounded-full bg-gray-100 object-cover"
+                        />
+                    </div>
+
                     <div>
-                        <div className="mt-2 text-2xl font-semibold">
+                        <div className="mt-2 text-xl sm:text-xl font-semibold">
                             Kodossou Kouassi
                         </div>
-                        <div className="text-xl font-medium text-gray-600">
+                        <div className="text-xl sm:text-lg font-medium text-gray-600">
                             kodokoua
                         </div>
-                        <div className="mt-6 flex">
-                            <AccountStatItem label="Posts" value={10} />
-                            <AccountStatItem label="Abonnés" value={800} />
-                            <AccountStatItem label="Abonements" value={200} />
-                        </div>
-                    </div>
 
-                    <div className="mt-2 ml-12">
-                        <div className="flex">
-                            <div className="mr-1">
-                                <Button
-                                    variant="outline"
-                                    colorScheme="dark"
-                                    leftIcon={<RiEditLine />}
-                                >
-                                    modifier mon profil
-                                </Button>
-                            </div>
-                            <div>
-                                <IconButton
-                                    rounded="full"
-                                    variant="outline"
-                                    colorScheme="dark"
-                                >
-                                    <RiMore2Fill />
-                                </IconButton>
+                        <div className="mt-5">
+                            <div className="flex">
+                                <div className="mr-1">
+                                    <Button
+                                        variant="outline"
+                                        colorScheme="dark"
+                                        leftIcon={<RiEditLine />}
+                                    >
+                                        modifier profil
+                                    </Button>
+                                </div>
+                                <div>
+                                    <IconButton
+                                        rounded="full"
+                                        variant="outline"
+                                        colorScheme="dark"
+                                    >
+                                        <RiMore2Fill />
+                                    </IconButton>
+                                </div>
                             </div>
                         </div>
-                        {/* Ou */}
-                        {/* <Button variant="fill">Suivre</Button> */}
                     </div>
                 </div>
-            </div>
-            <div className="max-w-lg">
-                <div className="mt-6 text-gray-700 font-light">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Amet nobis veritatis labore optio harum beatae odit numquam
-                    praesentium voluptates esse!
-                </div>
+                <div className="max-w-lg w-full">
+                    <div className="mt-6 flex">
+                        <AccountStatItem label="Posts" value={10} />
+                        <AccountStatItem label="Abonnés" value={800} />
+                        <AccountStatItem label="Abonements" value={200} />
+                    </div>
+                    <div className="mt-6 text-gray-700 font-light">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Amet nobis veritatis labore optio harum beatae
+                        odit numquam praesentium voluptates esse!
+                    </div>
 
-                <div className="mt-2 text-blue-500 hover:text-blue-600 cursor-pointer">
-                    kodossoukouassi.vercel.app
+                    <a
+                        href="http://kodossoukouassi.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div className="mt-2 text-blue-500 hover:text-blue-600 cursor-pointer">
+                            kodossoukouassi.vercel.app
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div className="mt-4 mb-10">
+
+            <div className="mt-4 mb-10 px-20 sm:px-0">
                 <Tabs>
                     <Tabs.List>
                         <Tabs.Tab>Posts</Tabs.Tab>

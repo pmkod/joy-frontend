@@ -10,7 +10,7 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
     return (
         <div className="">
             <div className="sm:mb-4">
-                <div className="pl-10 py-3 sm:pl-3">
+                <div className="pl-10 py-3 sm:pl-6">
                     <Link
                         href="/"
                         className="text-3xl sm:text-2xl font-bold text-black"
@@ -20,7 +20,7 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
                 </div>
             </div>
 
-            <div className="w-[450px] sm:w-11/12 mx-auto bg-white">
+            <div className="w-[450px] sm:w-full sm:px-6 mx-auto bg-white">
                 {children}
             </div>
         </div>
