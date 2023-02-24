@@ -22,9 +22,7 @@ const SignupDefaultPage = () => {
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="text-3xl text-gray-800 font-semibold mb-6">
-                Inscrivez vous
-            </div>
+            <div className="text-2xl font-medium mb-5">Inscrivez vous</div>
 
             <Controller
                 name="fullName"

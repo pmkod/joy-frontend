@@ -14,7 +14,7 @@ const SignupPage = () => {
 
     return (
         <div className="">
-            <div className="font-semibold text-3xl mb-10">Inscrivez vous</div>
+            <div className="font-medium text-2xl mb-5">Inscrivez vous</div>
             <div className="">
                 <AuthServiceButton
                     onClick={goToSignupPage}

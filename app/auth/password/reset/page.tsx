@@ -1,4 +1,6 @@
 "use client";
+import {useRouter} from "next/navigation"
+import Alert from "@/ui/system/Alert/Alert";
 import Button from "@/ui/system/Button/Button";
 import Input from "@/ui/system/Input/Input";
 import {
@@ -14,12 +16,14 @@ const PAsswordResetPage = () => {
         resolver: nopeResolver(passwordResetFormSchema),
         mode: "onChange",
     });
+    const router = useRouter()
     const onSubmit: SubmitHandler<PasswordResetFormFields> = (data) => {
+        router.push("/auth/verificaiton/otp")
         console.log(data);
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="text-3xl text-gray-800 font-semibold mb-6">
+            <div className="text-2xl font-semibold mb-5">
                 Renitializer votre mot de passe
             </div>
 
@@ -38,15 +42,13 @@ const PAsswordResetPage = () => {
                 )}
             />
 
-            <div className="mt-7">
+            <div className="mt-7 mb-8">
                 <Button type="submit" fullWidth={true} rounded="md">
                     Continuer
                 </Button>
             </div>
 
-            <div className="mt-8 text-sm text-gray-700">
-                Un code vous seras envoyé par mail
-            </div>
+            <Alert status="info">Un code vous seras envoyé par mail</Alert>
         </form>
     );
 };

@@ -18,6 +18,7 @@ specifiers:
   nope-validator: ^1.0.4
   postcss: ^8.4.21
   react: 18.2.0
+  react-auth-code-input: ^3.2.1
   react-dom: 18.2.0
   react-hook-form: ^7.42.1
   react-icons: ^4.7.1
@@ -42,6 +43,7 @@ dependencies:
   next: 13.1.2_biqbaboplfbrettd7655fr4n2y
   nope-validator: 1.0.4
   react: 18.2.0
+  react-auth-code-input: 3.2.1_react@18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.42.1_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
@@ -2169,6 +2171,15 @@ packages:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
     dev: true
+
+  /react-auth-code-input/3.2.1_react@18.2.0:
+    resolution: {integrity: sha512-oWWKbxDLU5g46gvE1DIvNFHsDx37JSAfB6WX8luG6TWZB3iDfKMjQnhUgb+0imL/6ykGVMqdZ426tQW1uj25kg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16.0.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}

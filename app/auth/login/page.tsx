@@ -23,8 +23,8 @@ const LoginPage = () => {
     return (
         <div className="">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="mb-8">
-                    <div className="font-semibold text-2xl">Connectez vous</div>
+                <div className="mb-5">
+                    <div className="font-medium text-2xl">Connectez vous</div>
                 </div>
                 <Controller
                     name="email"
