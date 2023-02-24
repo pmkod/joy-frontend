@@ -83,17 +83,27 @@ const BaseLayout = ({ children }: BaseLayoutProps) => {
                                 </div>
 
                                 <div className="flex gap-x-4">
-                                    <Button
-                                        variant="outline"
-                                        size="md"
-                                        fullWidth
+                                    <Link
+                                        href="/auth/login"
+                                        className="block w-full"
                                     >
-                                        Se connecter
-                                    </Button>
+                                        <Button
+                                            variant="outline"
+                                            size="md"
+                                            fullWidth
+                                        >
+                                            Se connecter
+                                        </Button>
+                                    </Link>
 
-                                    <Button variant="fill" fullWidth>
-                                        S'inscrire
-                                    </Button>
+                                    <Link
+                                        href="/auth/signup"
+                                        className="block w-full"
+                                    >
+                                        <Button variant="fill" fullWidth>
+                                            S'inscrire
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
