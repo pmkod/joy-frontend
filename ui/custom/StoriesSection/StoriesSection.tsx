@@ -1,11 +1,5 @@
 import React from "react";
-import {
-    RiAddLine,
-    RiImage2Fill,
-    RiImage2Line,
-    RiMedalFill,
-} from "react-icons/ri";
-import { BiImageAlt } from "react-icons/bi";
+import { RiAddLine } from "react-icons/ri";
 
 const Story = () => {
     return (
@@ -28,7 +22,7 @@ const Story = () => {
 
 const StoriesSection = () => {
     return (
-        <div className="flex hide-scrollbar overflow-x-auto rounded-3xl bg-white border border-gray-200 px-4 py-4 mt-8 mb-6">
+        <div className="overflow-x-scroll flex hide-scrollbar rounded-3xl bg-white border border-gray-200 px-4 py-4 mt-5 mb-6">
             <div className="mr-4 cursor-pointer">
                 <div className="bg-gray-200 w-max rounded-full p-0.5">
                     <div className="flex items-center justify-center border-white border-2 rounded-full w-14 h-14 bg-gray-200 relative">

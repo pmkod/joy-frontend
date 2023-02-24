@@ -7,7 +7,7 @@ const Layout = ({ children }: PropsWithChildren) => {
         <div className="flex min-h-screen">
             <div className="flex-1">{children}</div>
 
-            <div className="w-96 pr-4 relative">
+            <div className="w-96 pr-4 relative md:hidden">
                 <div className="sticky top-8 border border-slate-200 rounded-3xl overflow-hidden pb-2">
                     <div className="flex justify-between px-6 py-4">
                         <div className="text-lg font-medium">Suggestions</div>
