@@ -6,7 +6,7 @@ import Input from "@/ui/system/Input/Input";
 import Link from "next/link";
 import React from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { nopeResolver } from "@hookform/resolvers/nope";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
     LoginFormFields,
     loginFormSchema,
@@ -14,7 +14,7 @@ import {
 
 const LoginPage = () => {
     const { control, handleSubmit } = useForm<LoginFormFields>({
-        resolver: nopeResolver(loginFormSchema),
+        resolver: zodResolver(loginFormSchema),
         mode: "onSubmit",
     });
     const onSubmit: SubmitHandler<LoginFormFields> = (data) => {
@@ -36,7 +36,6 @@ const LoginPage = () => {
                             label="Email"
                             errorMessage={error?.message}
                             placeholder="xyz@mail.com"
-                            // placeholder={}
                             {...field}
                         />
                     )}
@@ -48,11 +47,10 @@ const LoginPage = () => {
                         <Input
                             type="password"
                             label="Mot de passe"
-                            {...field}
                             placeholder="Au moins 12 caractères"
-                            // placeholder=""
                             errorMessage={error?.message}
                             hasMarginBottom={false}
+                            {...field}
                         />
                     )}
                 />

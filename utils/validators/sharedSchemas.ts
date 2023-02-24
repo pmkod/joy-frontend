@@ -1,6 +1,6 @@
-import Nope from "nope-validator";
+import { z } from "zod";
 
-export const userNameSchema = Nope.string();
-export const fullNameSchema = Nope.string();
-export const emailSchema = Nope.string().email();
-export const passwordSchema = Nope.string().min(12).max(50);
+export const userNameSchema = z.string();
+export const fullNameSchema = z.string();
+export const emailSchema = z.string().email();
+export const passwordSchema = z.string().min(12).max(30);

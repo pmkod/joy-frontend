@@ -2,19 +2,22 @@
 import Button from "@/ui/system/Button/Button";
 import Input from "@/ui/system/Input/Input";
 import {
-    PasswordResetNewPasswordFields,
+    PasswordResetNewPasswordFormFields,
     passwordResetNewPasswordSchema,
 } from "@/utils/validators/passwordResetNewPasswordFormSchema";
-import { nopeResolver } from "@hookform/resolvers/nope";
+import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 const PasswordResetNewPasswordPage = () => {
-    const { control, handleSubmit } = useForm<PasswordResetNewPasswordFields>({
-        resolver: nopeResolver(passwordResetNewPasswordSchema),
-        mode: "onChange",
-    });
-    const onSubmit: SubmitHandler<PasswordResetNewPasswordFields> = (data) => {
+    const { control, handleSubmit } =
+        useForm<PasswordResetNewPasswordFormFields>({
+            resolver: zodResolver(passwordResetNewPasswordSchema),
+            mode: "onChange",
+        });
+    const onSubmit: SubmitHandler<PasswordResetNewPasswordFormFields> = (
+        data
+    ) => {
         console.log(data);
     };
     return (

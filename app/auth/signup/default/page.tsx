@@ -9,13 +9,13 @@ import {
     SignupFormFields,
     signupFormSchema,
 } from "@/utils/validators/signupFormSchema";
-import { nopeResolver } from "@hookform/resolvers/nope";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const SignupDefaultPage = () => {
     const { control, handleSubmit } = useForm<SignupFormFields>({
-        resolver: nopeResolver(signupFormSchema),
-        mode: "onChange",
+        resolver: zodResolver(signupFormSchema),
+        mode: "onSubmit",
     });
     const onSubmit: SubmitHandler<SignupFormFields> = (data) => {
         console.log(data);

@@ -1,12 +1,11 @@
-import Nope from "nope-validator";
 import { passwordSchema } from "./sharedSchemas";
+import { z } from "zod";
 
-export type PasswordResetNewPasswordFields = {
-    newPassword: string;
-    confirmNewPassword: string;
-};
-
-export const passwordResetNewPasswordSchema = Nope.object().shape({
-    newPassword: passwordSchema.required(),
-    confirmNewPassword: passwordSchema.required(),
+export const passwordResetNewPasswordSchema = z.object({
+    newPassword: passwordSchema,
+    confirmNewPassword: passwordSchema,
 });
+
+export type PasswordResetNewPasswordFormFields = z.infer<
+    typeof passwordResetNewPasswordSchema
+>;

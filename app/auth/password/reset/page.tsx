@@ -1,5 +1,5 @@
 "use client";
-import {useRouter} from "next/navigation"
+import { useRouter } from "next/navigation";
 import Alert from "@/ui/system/Alert/Alert";
 import Button from "@/ui/system/Button/Button";
 import Input from "@/ui/system/Input/Input";
@@ -7,18 +7,18 @@ import {
     PasswordResetFormFields,
     passwordResetFormSchema,
 } from "@/utils/validators/passwordResetFormSchema";
-import { nopeResolver } from "@hookform/resolvers/nope";
 import React from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const PAsswordResetPage = () => {
     const { control, handleSubmit } = useForm<PasswordResetFormFields>({
-        resolver: nopeResolver(passwordResetFormSchema),
+        resolver: zodResolver(passwordResetFormSchema),
         mode: "onChange",
     });
-    const router = useRouter()
+    const router = useRouter();
     const onSubmit: SubmitHandler<PasswordResetFormFields> = (data) => {
-        router.push("/auth/verificaiton/otp")
+        router.push("/auth/verificaiton/otp");
         console.log(data);
     };
     return (

@@ -1,4 +1,4 @@
-import Nope from "nope-validator";
+import { z } from "zod";
 import {
     emailSchema,
     fullNameSchema,
@@ -6,16 +6,11 @@ import {
     userNameSchema,
 } from "./sharedSchemas";
 
-export type SignupFormFields = {
-    userName: string;
-    fullName: string;
-    email: string;
-    password: string;
-};
-
-export const signupFormSchema = Nope.object().shape({
-    fullName: fullNameSchema.required(),
-    userName: userNameSchema.required(),
-    email: emailSchema.required(),
-    password: passwordSchema.required(),
+export const signupFormSchema = z.object({
+    fullName: fullNameSchema,
+    userName: userNameSchema,
+    email: emailSchema,
+    password: passwordSchema,
 });
+
+export type SignupFormFields = z.infer<typeof signupFormSchema>;
