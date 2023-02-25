@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/ui/custom/Footer/Footer";
 import Link from "next/link";
 import React from "react";
 
@@ -8,21 +9,25 @@ type AuthLayoutProps = {
 
 const AuthLayout = ({ children }: AuthLayoutProps) => {
     return (
-        <div className="bg-yellow-300 h-full min-h-screen pb-20">
-            <div className="sm:mb-4">
-                <div className="pl-10 py-3 sm:pl-6">
-                    <Link
-                        href="/"
-                        className="text-3xl sm:text-2xl font-bold text-black"
-                    >
-                        Reborn
-                    </Link>
+        <div className="">
+            <div className="min-h-screen">
+                <div className="h-16 flex items-center">
+                    <div className="pl-10 sm:pl-5">
+                        <Link
+                            href="/"
+                            className="text-3xl sm:text-2xl font-bold text-black"
+                        >
+                            Reborn
+                        </Link>
+                    </div>
+                </div>
+
+                <div className="w-[450px] mt-4 rounded-lg sm:w-full sm:px-5 mx-auto">
+                    {children}
                 </div>
             </div>
 
-            <div className="w-[450px] p-8 rounded-lg sm:w-full sm:px-6 mx-auto bg-white">
-                {children}
-            </div>
+            <Footer />
         </div>
     );
 };

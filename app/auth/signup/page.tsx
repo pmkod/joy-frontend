@@ -14,7 +14,14 @@ const SignupPage = () => {
 
     return (
         <div className="">
-            <div className="font-medium text-2xl mb-5">Inscrivez vous</div>
+            <div className="font-medium text-2xl mb-1">Inscrivez vous</div>
+
+            <div className="flex text-sm mb-7">
+                <p className="text-gray-600">Déja un compte ? &nbsp;</p>
+                <Link href="/auth/login" className="text-blue-500">
+                    Connectez vous
+                </Link>
+            </div>
             <div className="">
                 <AuthServiceButton
                     onClick={goToSignupPage}
@@ -39,13 +46,6 @@ const SignupPage = () => {
                 </div>
                 <div className="mt-5">
                     <TermsAndPrivacyPolicyTextInfo />
-                </div>
-
-                <div className="text-sm mt-6">
-                    <p className="text-gray-600">Déja un compte ? &nbsp;</p>
-                    <Link href="/auth/login" className="text-blue-500">
-                        Connectez vous
-                    </Link>
                 </div>
             </div>
         </div>

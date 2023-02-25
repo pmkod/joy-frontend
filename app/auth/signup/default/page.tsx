@@ -22,7 +22,14 @@ const SignupDefaultPage = () => {
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="text-2xl font-medium mb-5">Inscrivez vous</div>
+            <div className="text-2xl font-medium mb-1">Inscrivez vous</div>
+
+            <div className="text-sm flex mb-5">
+                <p className="text-gray-600">Déja un compte ? &nbsp;</p>
+                <Link href="/auth/login" className="text-blue-500">
+                    Connectez vous
+                </Link>
+            </div>
 
             <Controller
                 name="fullName"
@@ -83,19 +90,14 @@ const SignupDefaultPage = () => {
                     />
                 )}
             />
-            <div className="mt-7">
+
+            <div className="">
+                <TermsAndPrivacyPolicyTextInfo />
+            </div>
+            <div className="mt-2">
                 <Button type="submit" fullWidth={true} rounded="md" size="md">
                     S'inscrire
                 </Button>
-            </div>
-            <div className="mt-2">
-                <TermsAndPrivacyPolicyTextInfo />
-            </div>
-            <div className="text-sm flex mt-2 mb-10">
-                <p className="text-gray-600">Déja un compte ? &nbsp;</p>
-                <Link href="/auth/login" className="text-blue-500">
-                    Connectez vous
-                </Link>
             </div>
         </form>
     );

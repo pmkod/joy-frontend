@@ -1,6 +1,7 @@
 "use client";
 import Button from "@/ui/system/Button/Button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { FiDownload } from "react-icons/fi";
 
@@ -10,6 +11,9 @@ type BaseLayoutProps = {
 
 const BaseLayout = ({ children }: BaseLayoutProps) => {
     const [showMenu, setShowMenu] = useState(false);
+    const pathname = usePathname();
+
+    const headerIsYellow = pathname === "/";
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
@@ -22,7 +26,11 @@ const BaseLayout = ({ children }: BaseLayoutProps) => {
     ];
     return (
         <div className="">
-            <div className="bg-yellow-300 flex items-center justify-between w-full px-10 sm:px-5 py-4">
+            <div
+                className={`${
+                    headerIsYellow ? "bg-yellow-300" : "bg-white"
+                } flex items-center justify-between w-full px-10 sm:px-5 h-16`}
+            >
                 <div className="w-72 md:w-max">
                     <Link
                         href="/"
@@ -43,23 +51,21 @@ const BaseLayout = ({ children }: BaseLayoutProps) => {
                     ))}
                 </div> */}
 
-                <div className="flex justify-end items-center">
-                    <div className="w-72 md:w-max md:hidden flex justify-end">
-                        <Link href="/download">
-                            <Button variant="fill" leftIcon={<FiDownload />}>
-                                Télécharger l'application
-                            </Button>
-                        </Link>
-                    </div>
+                <div className="w-72 md:w-max md:hidden flex justify-end">
+                    <Link href="/download">
+                        <Button variant="fill" leftIcon={<FiDownload />}>
+                            Télécharger l'application
+                        </Button>
+                    </Link>
+                </div>
 
-                    <div className="hidden sm:block">
+                {/* <div className="hidden sm:block">
                         <Link href="/download">
                             <Button variant="fill" size="md">
                                 Obtenir l'application
                             </Button>
                         </Link>
-                    </div>
-                </div>
+                    </div> */}
             </div>
 
             <div className="">{children}</div>

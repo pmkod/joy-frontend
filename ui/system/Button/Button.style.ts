@@ -22,7 +22,7 @@ export const buttonStyle = cva(
             size: {
                 xs: "px-2 py-0.5 text-xs",
                 sm: "px-3 py-1 text-sm",
-                md: "px-5 py-2 text-sm",
+                md: "px-5 py-2.5 text-sm",
                 lg: "px-7 py-3 text-lg",
                 xl: "px-9 py-4 text-xl",
             },
@@ -31,7 +31,6 @@ export const buttonStyle = cva(
             },
         },
         compoundVariants: [
-            // Primary
             {
                 variant: "fill",
                 colorScheme: "primary",
@@ -65,7 +64,7 @@ export const buttonStyle = cva(
                 variant: "outline",
                 colorScheme: "dark",
                 className:
-                    "text-gray-900 hover:bg-gray-100 bg-transparent border-gray-900",
+                    "text-gray-900 hover:bg-gray-100 bg-white border-gray-900",
             },
             {
                 variant: "outline",

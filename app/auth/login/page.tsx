@@ -23,8 +23,15 @@ const LoginPage = () => {
     return (
         <div className="">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="mb-5">
+                <div className="mb-1">
                     <div className="font-medium text-2xl">Connectez vous</div>
+                </div>
+
+                <div className="text-sm flex mb-5">
+                    <p className="text-gray-600">Pas de compte ? &nbsp;</p>
+                    <Link href="/auth/signup" className="text-blue-500">
+                        Inscrivez vous
+                    </Link>
                 </div>
                 <Controller
                     name="email"
@@ -71,7 +78,7 @@ const LoginPage = () => {
             </form>
 
             <AuthFormOptionsSeperator>Ou</AuthFormOptionsSeperator>
-            <div className="flex flex-col gap-4 mb-4">
+            <div className="flex flex-col gap-4">
                 <AuthServiceButton
                     onClick={() => {}}
                     service="facebook"
@@ -82,12 +89,6 @@ const LoginPage = () => {
                     service="google"
                     text="Continuez avec google"
                 />
-            </div>
-            <div className="text-sm flex mt-2">
-                <p className="text-gray-600">Pas de compte ? &nbsp;</p>
-                <Link href="/auth/signup" className="text-blue-500">
-                    Inscrivez vous
-                </Link>
             </div>
         </div>
     );

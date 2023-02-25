@@ -9,6 +9,7 @@ interface ButtonProps
     size?: "xs" | "sm" | "md" | "lg" | "xl";
     fullWidth?: boolean;
     colorScheme?: "primary" | "danger" | "dark" | "white";
+    compact?: boolean;
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
 }
