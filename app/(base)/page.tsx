@@ -32,7 +32,11 @@ const page = () => {
                     </Link>
                 </div>
 
-                <div className="mt-10 mb-4 invisible sm:visible">Ou</div>
+                <div className="mt-10 mb-4 invisible sm:visible flex items-center gap-x-4">
+                    <div className="w-4 h-px bg-gray-700"></div>
+                    <div className="text-sm">Ou</div>
+                    <div className="w-4 h-px bg-gray-700"></div>
+                </div>
 
                 <div className="mb-16 invisible sm:visible">
                     <Link href="/download" className="w-full">
