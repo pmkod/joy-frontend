@@ -17,6 +17,7 @@ export const buttonStyle = cva(
                 primary: "",
                 danger: "",
                 dark: "",
+                white: "",
             },
             size: {
                 xs: "px-2 py-0.5 text-xs",
@@ -45,6 +46,11 @@ export const buttonStyle = cva(
             },
             {
                 variant: "fill",
+                colorScheme: "white",
+                className: "bg-white border-white hover:bg-white text-gray-900",
+            },
+            {
+                variant: "fill",
                 colorScheme: "danger",
                 className:
                     "bg-red-500 border-red-600 hover:bg-red-600 hover:border-red-600 text-white",
@@ -53,13 +59,13 @@ export const buttonStyle = cva(
                 variant: "outline",
                 colorScheme: "primary",
                 className:
-                    "text-yellow-500 hover:bg-gray-100 bg-transparent border-gray-300",
+                    "text-yellow-300 hover:bg-gray-100 bg-transparent border-yellow-300",
             },
             {
                 variant: "outline",
                 colorScheme: "dark",
                 className:
-                    "text-gray-800 hover:bg-gray-100 bg-transparent border-gray-300",
+                    "text-gray-900 hover:bg-gray-100 bg-transparent border-gray-900",
             },
             {
                 variant: "outline",
