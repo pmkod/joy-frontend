@@ -42,7 +42,7 @@ const Post = () => {
         setCommentInputAreVisible(true);
     };
     return (
-        <div className="mb-10 p-6 rounded-3xl border bg-white border-slate-300">
+        <div className="mb-10 p-6 sm:px-0 rounded-3xl border bg-white sm:border-0 border-slate-300">
             <div className="flex">
                 <div className="mr-2.5 w-12 h-12">
                     <img

@@ -4,7 +4,7 @@ import { RiImage2Line, RiVideoLine } from "react-icons/ri";
 
 const CreatePost = () => {
     return (
-        <div className="rounded-3xl bg-slate-100 border border-slate-300 mb-6">
+        <div className="sm:hidden rounded-3xl bg-slate-100 border sm:border-0 border-slate-300 mb-6">
             <div className="px-6">
                 <input
                     type="text"

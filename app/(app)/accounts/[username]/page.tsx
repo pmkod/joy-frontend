@@ -1,15 +1,10 @@
 "use client";
+import ImagesGaleryWrapper from "@/ui/custom/ImageGaleryWrapper/ImageGaleryWrapper";
 import Button from "@/ui/system/Button/Button";
 import IconButton from "@/ui/system/IconButton/IconButton";
 import Tabs from "@/ui/system/Tabs/Tabs";
 import React, { PropsWithChildren } from "react";
-import {
-    RiEdit2Fill,
-    RiEdit2Line,
-    RiEditLine,
-    RiMore2Fill,
-    RiMore2Line,
-} from "react-icons/ri";
+import { RiEditLine, RiMore2Fill } from "react-icons/ri";
 
 type AccountStatItemProps = {
     label: string;
@@ -122,14 +117,6 @@ const saves = [
         ],
     },
 ];
-
-const ImagesGaleryWrapper = ({ children }: PropsWithChildren) => {
-    return (
-        <div className="grid gap-x-2 gap-y-2 sm:gap-1 grid-cols-4 sm:grid-cols-3">
-            {children}
-        </div>
-    );
-};
 
 const AccountPage = () => {
     return (

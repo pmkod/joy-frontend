@@ -2,7 +2,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { HiHome, HiOutlineHome } from "react-icons/hi";
+import {
+    HiHome,
+    HiOutlineHome,
+    HiOutlineSearch,
+    HiSearch,
+} from "react-icons/hi";
 import {
     RiChatSmile3Fill,
     RiChatSmile3Line,
@@ -10,6 +15,8 @@ import {
     RiCompass3Line,
     RiNotification3Fill,
     RiNotification3Line,
+    RiSearch2Fill,
+    RiSearch2Line,
     RiSettings3Fill,
     RiSettings3Line,
     RiSpeaker3Line,
@@ -95,8 +102,8 @@ const LayoutWithSidebar = ({ children }: LayoutWithSidebarProps) => {
         {
             label: "Explore",
             pathname: "/explore",
-            outlineIcon: <RiCompass3Line />,
-            fillIcon: <RiCompass3Fill />,
+            outlineIcon: <HiOutlineSearch />,
+            fillIcon: <HiSearch />,
         },
         {
             label: "Discussions",
@@ -134,8 +141,8 @@ const LayoutWithSidebar = ({ children }: LayoutWithSidebarProps) => {
         {
             label: "Explore",
             pathname: "/explore",
-            outlineIcon: <RiCompass3Line />,
-            fillIcon: <RiCompass3Fill />,
+            outlineIcon: <HiOutlineSearch />,
+            fillIcon: <HiSearch />,
         },
         {
             label: "Discussions",
@@ -211,9 +218,6 @@ const LayoutWithSidebar = ({ children }: LayoutWithSidebarProps) => {
                     ))}
                 </div>
             </div>
-            {/* <div className="flex-1 relative h-screen max-h-screen flex flex-col">
-                <div className="h-16 bg-blue-200">Bottom Nav</div>
-            </div> */}
         </div>
     );
 };

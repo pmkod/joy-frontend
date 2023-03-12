@@ -22,7 +22,7 @@ const Story = () => {
 
 const StoriesSection = () => {
     return (
-        <div className="overflow-x-scroll flex hide-scrollbar rounded-3xl bg-white border border-gray-200 px-4 py-4 mt-5 mb-6">
+        <div className="overflow-x-scroll flex hide-scrollbar rounded-3xl bg-white border border-gray-200 sm:border-0 px-4 sm:px-0 py-4 sm:py-0 mt-5 mb-6">
             <div className="mr-4 cursor-pointer">
                 <div className="bg-gray-200 w-max rounded-full p-0.5">
                     <div className="flex items-center justify-center border-white border-2 rounded-full w-14 h-14 bg-gray-200 relative">

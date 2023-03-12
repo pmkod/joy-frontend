@@ -1,7 +1,7 @@
 "use client";
 import CreatePost from "@/ui/custom/CreatePost/CreatePost";
 import Post from "@/ui/custom/Post/Post";
-import StoriesSuggestion from "@/ui/custom/StoriesSection/StoriesSection";
+import StoriesSection from "@/ui/custom/StoriesSection/StoriesSection";
 import Text from "@/ui/system/Text/Text";
 import Link from "next/link";
 import React from "react";
@@ -17,7 +17,7 @@ const HomePage = () => {
                     Reborn
                 </Link>
             </div>
-            <StoriesSuggestion />
+            <StoriesSection />
             <CreatePost />
             <Post />
             <Post />
